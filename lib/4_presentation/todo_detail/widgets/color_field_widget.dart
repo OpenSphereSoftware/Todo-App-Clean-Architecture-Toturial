@@ -17,11 +17,11 @@ class ColorField extends StatelessWidget {
             const itemColor = Colors.blueAccent;
             return GestureDetector(
               onTap: () {},
-              child: Material(
+              child: const Material(
                 color: itemColor,
                 elevation: 4,
-                shape:const  CircleBorder(side:  BorderSide(width: 1.5)),
-                child: Container(
+                shape:  CircleBorder(side:  BorderSide(width: 1.5)),
+                child: SizedBox(
                   width: 50,
                   height: 50,
                 ),
