@@ -1,9 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:todoappv0/2_domain/auth/entities/todo_color.dart';
 
 
 class ColorField extends StatelessWidget {
-  const ColorField({Key? key}) : super(key: key);
+  final TodoColor color;
+  final Function callback;
+
+  const ColorField({Key? key, required this.color , required this.callback}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,9 @@ class ColorField extends StatelessWidget {
           itemBuilder: (context, index) {
             const itemColor = Colors.blueAccent;
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                callback();
+              },
               child: const Material(
                 color: itemColor,
                 elevation: 4,

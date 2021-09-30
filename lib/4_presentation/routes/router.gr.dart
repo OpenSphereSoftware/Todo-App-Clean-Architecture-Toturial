@@ -7,6 +7,7 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 
+import '../../2_domain/auth/entities/todo.dart' as _i7;
 import '../home/home_page.dart' as _i5;
 import '../signup/signup_page.dart' as _i4;
 import '../splash/splash_page.dart' as _i3;
@@ -31,9 +32,10 @@ class AppRouter extends _i1.RootStackRouter {
           routeData: routeData, child: const _i5.HomePage());
     },
     TodoDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<TodoDetailRouteArgs>();
       return _i1.MaterialPageX<dynamic>(
           routeData: routeData,
-          child: const _i6.TodoDetail(),
+          child: _i6.TodoDetail(key: args.key, todo: args.todo),
           fullscreenDialog: true);
     }
   };
@@ -65,8 +67,19 @@ class HomePageRoute extends _i1.PageRouteInfo<void> {
   static const String name = 'HomePageRoute';
 }
 
-class TodoDetailRoute extends _i1.PageRouteInfo<void> {
-  const TodoDetailRoute() : super(name, path: '/todo-detail');
+class TodoDetailRoute extends _i1.PageRouteInfo<TodoDetailRouteArgs> {
+  TodoDetailRoute({_i2.Key? key, required _i7.Todo? todo})
+      : super(name,
+            path: '/todo-detail',
+            args: TodoDetailRouteArgs(key: key, todo: todo));
 
   static const String name = 'TodoDetailRoute';
+}
+
+class TodoDetailRouteArgs {
+  const TodoDetailRouteArgs({this.key, required this.todo});
+
+  final _i2.Key? key;
+
+  final _i7.Todo? todo;
 }

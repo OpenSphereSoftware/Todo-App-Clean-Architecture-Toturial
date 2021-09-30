@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 import 'package:todoappv0/1_infrastructure/auth/models/firebare_user_mapper.dart';
 import 'package:todoappv0/2_domain/auth/entities/user.dart';
 import 'package:todoappv0/2_domain/auth/repositories/auth_repository.dart';

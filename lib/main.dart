@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todoappv0/4_presentation/routes/router.gr.dart' as r;
-import 'package:todoappv0/4_presentation/signup/signup_page.dart';
 import 'package:todoappv0/injection.dart' as di;
 import 'package:todoappv0/theme.dart';
 

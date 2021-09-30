@@ -21,6 +21,7 @@ class SigninfromBloc extends Bloc<SigninfromEvent, SigninformState> {
       if (event.password == null || event.email == null) {
         emit(state.copyWith(
           showValidationMessages: true,
+          isSubmitting: false,
         ));
       } else {
         emit(state.copyWith(
@@ -39,6 +40,7 @@ class SigninfromBloc extends Bloc<SigninfromEvent, SigninformState> {
       if (event.password == null || event.email == null) {
         emit(state.copyWith(
           showValidationMessages: true,
+          isSubmitting: false,
         ));
       } else {
         emit(state.copyWith(
